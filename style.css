@@ -201,6 +201,30 @@ body.light-theme .btn-preview:hover {
 
 /* 📱 MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
+    /* FIX: Reduce navbar padding and shrink gap spacing on mobile */
+    .navbar {
+        padding: 15px 15px; /* Slashes the padding so things have room */
+    }
+
+    .logo {
+        font-size: 1.2rem; /* Marginally scales down logo text size */
+        letter-spacing: 1px;
+    }
+
+    .nav-links {
+        gap: 15px; /* Slashes the empty space between navigation items */
+    }
+
+    .nav-links a {
+        font-size: 0.9rem; /* Makes text links clean and readable on tiny screens */
+    }
+
+    #theme-toggle {
+        font-size: 1rem; /* Ensures the moon toggle stays properly scaled */
+        padding: 5px;   /* Gives it a slightly bigger touch targets for fingers */
+    }
+
+    /* Keep your existing hero section layout overrides here */
     .hero-container {
         flex-direction: column-reverse; 
         text-align: center;
