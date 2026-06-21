@@ -201,27 +201,38 @@ body.light-theme .btn-preview:hover {
 
 /* 📱 MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
-    /* FIX: Reduce navbar padding and shrink gap spacing on mobile */
+    /* 1. Stack the navbar items into rows and center them */
     .navbar {
-        padding: 15px 15px; /* Slashes the padding so things have room */
+        flex-wrap: wrap;        /* Allows items to move to a new row */
+        padding: 15px 20px;     /* Comfortable mobile padding */
+        gap: 15px;              /* Space between the top row and the links */
     }
 
+    /* 2. Keep the Logo on the left side of the top row */
     .logo {
-        font-size: 1.2rem; /* Marginally scales down logo text size */
+        font-size: 1.3rem;
         letter-spacing: 1px;
+        order: 1;               /* Forces logo to stay first */
     }
 
+    /* 3. Pull the Moon Button to the right side of the top row */
+    #theme-toggle {
+        font-size: 1.2rem;
+        padding: 5px 10px;
+        order: 2;               /* Forces button to stay second */
+    }
+
+    /* 4. Push all 6 links to a clean new row right underneath */
     .nav-links {
-        gap: 15px; /* Slashes the empty space between navigation items */
+        width: 100%;            /* Takes up the whole width to force a new line */
+        justify-content: center;/* Centers your 6 links perfectly */
+        gap: 12px;              /* Clean tap spacing between your links */
+        flex-wrap: wrap;        /* Safety wrap if a screen is incredibly narrow */
+        order: 3;               /* Forces links to stay at the bottom row */
     }
 
     .nav-links a {
-        font-size: 0.9rem; /* Makes text links clean and readable on tiny screens */
-    }
-
-    #theme-toggle {
-        font-size: 1rem; /* Ensures the moon toggle stays properly scaled */
-        padding: 5px;   /* Gives it a slightly bigger touch targets for fingers */
+        font-size: 0.85rem;     /* Slightly smaller font so all 6 fit cleanly */
     }
 
     /* Keep your existing hero section layout overrides here */
@@ -230,15 +241,12 @@ body.light-theme .btn-preview:hover {
         text-align: center;
         gap: 30px;
     }
-
     .hero-content {
         text-align: center;
     }
-
     .hero h1 {
         font-size: 2.5rem; 
     }
-
     .hero-image img {
         max-width: 250px; 
     }
